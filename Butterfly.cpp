@@ -1,0 +1,67 @@
+// Butterfly pattern
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cout << "Enter a number : " << endl;
+    cin >> n;
+    cout << endl;
+    for (int row = 0; row < n; row++)
+    {
+        for (int col = 0; col < n; col++)
+        {
+            if (col <= row)
+            {
+                cout << "* ";
+            }
+            else
+            {
+                cout << "  ";
+            }
+        }
+        for (int col = 0; col < n; col++)
+        {
+            if (col < n - row - 1)
+            {
+                cout << "  ";
+            }
+            else
+            {
+                cout << "* ";
+            }
+        }
+        cout << endl;
+    }
+
+    // Lower part
+    for (int row = 0; row < n; row++)
+    {
+        for (int col = 0; col < n; col++)
+        {
+            if (col < n - row)
+            {
+                cout << "* ";
+            }
+            else
+            {
+                cout << "  ";
+            }
+        }
+        for (int col = 0; col < n; col++)
+        {
+            if (col < row)
+            {
+                cout << "  ";
+            }
+            else
+            {
+                cout << "* ";
+            }
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
